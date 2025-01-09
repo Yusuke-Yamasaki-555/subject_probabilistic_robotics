@@ -1,5 +1,22 @@
 #!/usr/bin/env python3
 
+""" LICENSE
+
+SPDX-License-Identifier:MIT
+Copyright (C) 2024 Yusuke Yamasaki. All Rights Reserved.
+
+"""
+
+
+""" References
+
+The GUIImage function included in this program was written with reference to the following website:
+
+ - matplotlib, "Annotated heatmap", https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html#sphx-glr-gallery-images-contours-and-fields-image-annotated-heatmap-py, last viewed on: 2025/1/10
+
+"""
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -164,11 +181,13 @@ class Q_Learning():
       # 各マスに各状態におけるQ値の最大値を表示
 
     """ References
-    - matplotlib, "Annotated heatmap", https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html#sphx-glr-gallery-images-contours-and-fields-image-annotated-heatmap-py, last viewing date: 2025/1/10
+      This function was written with reference to the following website:
+
+       - matplotlib, "Annotated heatmap", https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html#sphx-glr-gallery-images-contours-and-fields-image-annotated-heatmap-py, last viewed on: 2025/1/10
     """
 
     _, axes = plt.subplots()
-    axes.imshow(self.best_q_, cmap="Greens")  # Gridの描画
+    axes.imshow(self.best_q_, cmap="PiYG")  # Gridの描画
     for i in range(len(self.best_q_[0])):  # テキストの描画
       axes.text(i, 0, self.best_q_[0][i], horizontalalignment="center", verticalalignment="center")
     axes.set_yticks(range(len([0])), "0")
