@@ -34,31 +34,31 @@ class Q_Learning():
 
     """
     # 環境のサイズ
-    self.env_size_ :tuple[int, int] = (0, 6)
+    self.env_size_ :tuple[int, int] = (0, 6)  # 変更可能。報酬の変数と要素数を合わせること
 
     # 開始位置（＝初期位置）の座標（タプル）
-    self.start_pos_ = np.array([self.env_size_[0], 2])
+    self.start_pos_ = np.array([self.env_size_[0], 2])  # 変更可能
     # ゴール位置の座標（タプル）
-    self.goal_pos_ = np.array([self.env_size_[0], self.env_size_[1]])
+    self.goal_pos_ = np.array([self.env_size_[0], self.env_size_[1]])  # 変更可能
 
-    # alfaの定義
-    self.alfa = 0.5
+    # alfa（過去の忘れにくさ）の定義
+    self.alfa = 0.5  # 変更可能。0 <= alfa <= 1 の範囲で設定可能
 
-    # epsilonの定義
-    self.epsilon = 0.2
+    # epsilon（ε-greedy方策の、どれだけの確率で探索するかのパラメータ）の定義
+    self.epsilon = 0.2  # 変更可能。0 <= epsilon <= 1 の範囲で設定可能
 
-    # 報酬の変数（１行行列）
-    self.env_reward_ = np.array([[-100, -1, 0, -1, -1, -1, 10]])
+    # 報酬の変数
+    self.env_reward_ = np.array([[-100, -1, 0, -1, -1, -1, 10]])  # 変更可能。環境のサイズと要素数を合わせること
     self.env_reward_goal_ = self.env_reward_[self.goal_pos_[0]][self.goal_pos_[1]]
     self.reward_total_ = 0
     self.reward_ep_list_ :list[list[int]] = [[]]
     self.reward_total_ep_list_ :list[int] = []
 
-    # Q値の変数（１行行列）
-    self.q_ = np.full((self.env_size_[0]+1, self.env_size_[1]+1), 0)
-    # 状態の変数（＝現在座標の変数。タプル）
+    # Q値の変数
+    self.q_ = np.full((self.env_size_[0]+1, self.env_size_[1]+1), 0)  # 変更可能。np.full()の最後の引数となっている整数部分のみ変更可能
+    # 状態の変数
     self.x_ :np.ndarray = self.start_pos_.copy()
-    # 行動の変数（＝速度の変数（X方向に+-1 のみ）。タプル）
+    # 行動の変数
     self.a_ = np.array([0, 0])  # [y, x]
 
     # 状態と行動のlist
@@ -70,7 +70,7 @@ class Q_Learning():
     self.check_rl_end_ = False
 
     # 現在および最大episode数の変数
-    self.episode_max_ = 100
+    self.episode_max_ = 100  # 変更可能
     self.episode_now_ = 1
 
     # step数とepisode毎step数の変化の変数
