@@ -46,6 +46,9 @@ See the `scripts/q_learning.py` file for more details.
 学習が進むにつれ、報酬が高ければ Q 値も大きくなり、逆に低ければ Q 値も小さくなります。<br>
 
 本プログラム`scripts/q_learning.py`では、以上の設定を踏まえて強化学習の１つである Q 学習を行い、学習終了後に CLI および GUI で結果を出力します。<br>
+GUI 表示に関する処理は[こちらのサイト](https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html#sphx-glr-gallery-images-contours-and-fields-image-annotated-heatmap-py)を参考に実装しました。<br>
+他の処理は、 Reference に挙げたものを参考にしながら実装を行いました。<br>
+詳細は Reference とソースコードをご確認ください。
 
 ## 実行方法
 
